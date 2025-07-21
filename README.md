@@ -20,5 +20,5 @@
 Clone the repo:
 
 ```bash
-git clone 
-cd llm-box
+git clone https://github.com/sumimhasan/LLMBox.git
+cd LLMBox
