@@ -13,11 +13,11 @@ if gpus:
     try:
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
-        print(f"✅ Using GPU(s): {[gpu.name for gpu in gpus]}")
+        print(f" Using GPU(s): {[gpu.name for gpu in gpus]}")
     except RuntimeError as e:
-        print(f"⚠️ GPU setup error: {e}")
+        print(f" GPU setup error: {e}")
 else:
-    print("❌ No GPU found. Running on CPU.")
+    print(" No GPU found. Running on CPU.")
 
 # ==== PATHS ====
 MODEL_PATH = os.path.join("saved_model", "transformer_model.h5")
@@ -39,7 +39,7 @@ custom_objects = {
     'PositionalEncoding': PositionalEncoding
 }
 model = load_model(MODEL_PATH, custom_objects=custom_objects)
-print("✅ Model loaded.")
+print(" Model loaded.")
 
 # ==== SAMPLING FUNCTION ====
 def sample_with_top_k_top_p(predictions, temperature=1.0, top_k=50, top_p=0.9, use_top_k=True, use_top_p=True):
